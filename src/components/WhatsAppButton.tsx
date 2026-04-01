@@ -1,6 +1,5 @@
 import { MessageCircle } from "lucide-react";
-
-const WHATSAPP_URL = "https://wa.me/5500000000000?text=Olá!%20Quero%20saber%20mais%20sobre%20a%20gestão%20de%20tráfego%20pago.";
+import { useContent } from "@/contexts/ContentContext";
 
 interface WhatsAppButtonProps {
   children: React.ReactNode;
@@ -9,13 +8,14 @@ interface WhatsAppButtonProps {
 }
 
 export const WhatsAppButton = ({ children, className = "", size = "default" }: WhatsAppButtonProps) => {
+  const { getWhatsAppUrl } = useContent();
+
   const handleClick = () => {
-    // GTM/Meta event
     if (typeof window !== "undefined") {
       (window as any).dataLayer?.push({ event: "whatsapp_click" });
       (window as any).fbq?.("track", "Contact");
     }
-    window.open(WHATSAPP_URL, "_blank");
+    window.open(getWhatsAppUrl(), "_blank");
   };
 
   const sizeClasses = size === "lg"
@@ -34,12 +34,14 @@ export const WhatsAppButton = ({ children, className = "", size = "default" }: W
 };
 
 export const FloatingWhatsApp = () => {
+  const { getWhatsAppUrl } = useContent();
+
   const handleClick = () => {
     if (typeof window !== "undefined") {
       (window as any).dataLayer?.push({ event: "whatsapp_click_floating" });
       (window as any).fbq?.("track", "Contact");
     }
-    window.open(WHATSAPP_URL, "_blank");
+    window.open(getWhatsAppUrl(), "_blank");
   };
 
   return (
