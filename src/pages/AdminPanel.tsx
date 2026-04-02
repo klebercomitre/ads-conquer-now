@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useContent, type SiteContent, type Testimonial, type FaqItem, type PainItem, type SolutionItem, type StepItem, type BenefitItem, type ObjectionItem } from "@/contexts/ContentContext";
+import { useAuth } from "@/hooks/useAuth";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Trash2, Plus, ArrowLeft, RotateCcw } from "lucide-react";
+import { Trash2, Plus, ArrowLeft, RotateCcw, LogOut, Loader2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
 
