@@ -237,7 +237,7 @@ export const ContentProvider = ({ children }: { children: ReactNode }) => {
     setSaving(true);
     await supabase
       .from("site_content")
-      .update({ content: newContent as unknown as Record<string, unknown> })
+      .update({ content: JSON.parse(JSON.stringify(newContent)) })
       .eq("id", "main");
     setSaving(false);
   }, []);
