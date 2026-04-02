@@ -11,7 +11,8 @@ import { Link } from "react-router-dom";
 import { toast } from "sonner";
 
 const AdminPanel = () => {
-  const { content, updateContent, resetContent } = useContent();
+  const { content, updateContent, resetContent, saving } = useContent();
+  const { signOut } = useAuth();
 
   const handleReset = () => {
     if (window.confirm("Tem certeza? Isso vai resetar TODO o conteúdo para o padrão.")) {
