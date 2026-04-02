@@ -68,14 +68,6 @@ const Index = () => {
       <FooterSection />
       <FloatingWhatsApp />
 
-      {/* Admin link */}
-      <Link
-        to="/admin"
-        className="fixed bottom-6 left-6 z-50 w-12 h-12 rounded-full bg-card border shadow-card flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
-        title="Painel Administrativo"
-      >
-        <Settings className="w-5 h-5" />
-      </Link>
     </main>
   );
 };
