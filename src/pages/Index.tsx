@@ -12,8 +12,6 @@ import { FooterSection } from "@/components/sections/FooterSection";
 import { FloatingWhatsApp } from "@/components/WhatsAppButton";
 import { useContent } from "@/contexts/ContentContext";
 import { useEffect } from "react";
-import { Settings } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const Index = () => {
   const { content } = useContent();
