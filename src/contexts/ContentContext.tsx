@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import React, { createContext, useContext, useState, useEffect, useCallback, ReactNode } from "react";
+import { supabase } from "@/integrations/supabase/client";
 
 export interface Testimonial {
   id: string;
@@ -57,89 +58,61 @@ export interface SectionVisibility {
 }
 
 export interface SiteContent {
-  // Tracking
   whatsappNumber: string;
   whatsappMessage: string;
   metaPixelId: string;
   gtmId: string;
-
-  // Hero
   heroHeadline: string;
   heroHighlight: string;
   heroSubheadline: string;
   heroCtaText: string;
   heroBadges: string[];
-
-  // Authority
   authorityStats: { value: string; label: string }[];
-
-  // Pain
   painTitle: string;
   painSubtitle: string;
   painItems: PainItem[];
-
-  // Solution
   solutionTitle: string;
   solutionSubtitle: string;
   solutionItems: SolutionItem[];
   solutionCtaText: string;
-
-  // How it works
   howTitle: string;
   howSubtitle: string;
   howSteps: StepItem[];
-
-  // Benefits
   benefitsTitle: string;
   benefitItems: BenefitItem[];
   benefitsCtaText: string;
   benefitsHighlightValue: string;
   benefitsHighlightLabel: string;
-
-  // Testimonials
   testimonialsTitle: string;
   testimonialsSubtitle: string;
   testimonials: Testimonial[];
-
-  // Objections
   objectionsTitle: string;
   objectionItems: ObjectionItem[];
-
-  // CTA
   ctaTitle: string;
   ctaSubtitle: string;
   ctaButtonText: string;
-
-  // FAQ
   faqTitle: string;
   faqItems: FaqItem[];
-
-  // Footer
   footerText: string;
-
-  // Section visibility
   sections: SectionVisibility;
 }
 
-const defaultContent: SiteContent = {
+export const defaultContent: SiteContent = {
   whatsappNumber: "5500000000000",
   whatsappMessage: "Olá! Quero saber mais sobre a gestão de tráfego pago.",
   metaPixelId: "000000000000000",
   gtmId: "GTM-XXXXXXX",
-
   heroHeadline: "Pare de gastar dinheiro com anúncios que",
   heroHighlight: "não vendem.",
   heroSubheadline: "Na Acelera Ads, transformamos investimento em tráfego em vendas previsíveis todos os dias. Chega de jogar dinheiro fora com campanhas que não dão retorno.",
   heroCtaText: "Falar no WhatsApp",
   heroBadges: ["✓ Meta Ads", "✓ Google Ads", "✓ +30 negócios atendidos", "✓ Foco em ROI"],
-
   authorityStats: [
     { value: "+30", label: "Negócios atendidos" },
     { value: "Meta & Google", label: "Ads especializados" },
     { value: "ROI", label: "Foco em resultados reais" },
     { value: "100%", label: "Orientado por dados" },
   ],
-
   painTitle: "Isso te parece familiar?",
   painSubtitle: "Se você já passou por alguma dessas situações, saiba que não é culpa sua. A maioria dos negócios sofre com tráfego mal gerenciado.",
   painItems: [
@@ -148,7 +121,6 @@ const defaultContent: SiteContent = {
     { id: "3", title: "Falta de previsibilidade?", desc: "Não sabe quantos clientes vai ter no próximo mês. Vive na montanha-russa de vendas." },
     { id: "4", title: "Não entende os números?", desc: "Relatórios confusos, métricas que não fazem sentido e nenhuma clareza sobre o que está funcionando." },
   ],
-
   solutionTitle: "A Acelera Ads resolve isso pra você",
   solutionSubtitle: "Não vendemos cliques. Vendemos resultados.",
   solutionItems: [
@@ -158,7 +130,6 @@ const defaultContent: SiteContent = {
     { id: "4", title: "Análise de dados", desc: "Decisões baseadas em números reais, não em achismos." },
   ],
   solutionCtaText: "Quero resultados reais",
-
   howTitle: "Como funciona",
   howSubtitle: "Um processo simples e transparente para transformar anúncios em vendas.",
   howSteps: [
@@ -167,7 +138,6 @@ const defaultContent: SiteContent = {
     { id: "3", step: "03", title: "Implementação", desc: "Colocamos as campanhas no ar com precisão cirúrgica." },
     { id: "4", step: "04", title: "Otimização e escala", desc: "Melhoramos continuamente para escalar seus resultados." },
   ],
-
   benefitsTitle: "O que você ganha com a Acelera Ads",
   benefitItems: [
     { id: "1", text: "Mais clientes qualificados todos os dias" },
@@ -180,7 +150,6 @@ const defaultContent: SiteContent = {
   benefitsCtaText: "Começar agora",
   benefitsHighlightValue: "3x",
   benefitsHighlightLabel: "mais resultados\ncom tráfego inteligente",
-
   testimonialsTitle: "Quem já acelerou com a gente",
   testimonialsSubtitle: "Resultados reais de empresários que decidiram parar de perder dinheiro.",
   testimonials: [
@@ -188,7 +157,6 @@ const defaultContent: SiteContent = {
     { id: "2", name: "Ana Paula S.", role: "Clínica de Estética", text: "Antes eu gastava sem saber o que funcionava. Agora tenho agenda lotada todos os meses." },
     { id: "3", name: "Roberto L.", role: "Restaurante", text: "Achava que tráfego pago não funcionava para restaurante. A Acelera Ads provou o contrário." },
   ],
-
   objectionsTitle: "Ainda tem dúvidas?",
   objectionItems: [
     { id: "1", question: '"E se não funcionar?"', answer: "Trabalhamos com análise de dados e otimização contínua. Se algo não funciona, ajustamos rapidamente. Nosso compromisso é com seu resultado." },
@@ -196,11 +164,9 @@ const defaultContent: SiteContent = {
     { id: "3", question: '"Tráfego pago é caro"', answer: "Caro é perder vendas todos os dias por não ter presença online profissional. Nossos clientes veem retorno já nas primeiras semanas." },
     { id: "4", question: '"Funciona para o meu nicho?"', answer: "Atendemos desde e-commerces até negócios locais. Se seu público está na internet, podemos alcançá-lo." },
   ],
-
   ctaTitle: "Quer transformar anúncios em vendas todos os dias?",
   ctaSubtitle: "Fale agora com um especialista e descubra como escalar seu negócio com tráfego pago inteligente.",
   ctaButtonText: "Chamar no WhatsApp agora",
-
   faqTitle: "Perguntas frequentes",
   faqItems: [
     { id: "1", question: "Quanto preciso investir em anúncios?", answer: "O investimento varia conforme o seu nicho e seus objetivos. Na reunião de diagnóstico, sugerimos o valor ideal para o seu caso. Trabalhamos com negócios a partir de R$ 1.000/mês em mídia." },
@@ -209,30 +175,19 @@ const defaultContent: SiteContent = {
     { id: "4", question: "Preciso ter site ou loja virtual?", answer: "Não necessariamente. Podemos trabalhar com landing pages, Instagram, WhatsApp e outras estratégias. Avaliamos o melhor caminho no diagnóstico." },
     { id: "5", question: "Como funciona o contrato?", answer: "Trabalhamos com planos mensais, sem fidelidade longa. Acreditamos que os resultados falam por si só." },
   ],
-
   footerText: `© ${new Date().getFullYear()} Acelera Ads — Acelerador de Vendas. Todos os direitos reservados.`,
-
   sections: {
-    hero: true,
-    authority: true,
-    pain: true,
-    solution: true,
-    howItWorks: true,
-    benefits: true,
-    testimonials: true,
-    objections: true,
-    cta: true,
-    faq: true,
+    hero: true, authority: true, pain: true, solution: true, howItWorks: true,
+    benefits: true, testimonials: true, objections: true, cta: true, faq: true,
   },
 };
-
-const STORAGE_KEY = "acelera-ads-content";
 
 interface ContentContextType {
   content: SiteContent;
   updateContent: (partial: Partial<SiteContent>) => void;
   resetContent: () => void;
   getWhatsAppUrl: () => string;
+  saving: boolean;
 }
 
 const ContentContext = createContext<ContentContextType | null>(null);
@@ -244,36 +199,76 @@ export const useContent = () => {
 };
 
 export const ContentProvider = ({ children }: { children: ReactNode }) => {
-  const [content, setContent] = useState<SiteContent>(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        return { ...defaultContent, ...parsed };
-      }
-    } catch {}
-    return defaultContent;
-  });
+  const [content, setContent] = useState<SiteContent>(defaultContent);
+  const [saving, setSaving] = useState(false);
+  const [loaded, setLoaded] = useState(false);
 
+  // Load from Supabase on mount
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(content));
-  }, [content]);
+    const load = async () => {
+      const { data } = await supabase
+        .from("site_content")
+        .select("content")
+        .eq("id", "main")
+        .single();
 
-  const updateContent = (partial: Partial<SiteContent>) => {
-    setContent((prev) => ({ ...prev, ...partial }));
-  };
+      if (data?.content && Object.keys(data.content as object).length > 0) {
+        setContent({ ...defaultContent, ...(data.content as Partial<SiteContent>) });
+      }
+      setLoaded(true);
+    };
+    load();
 
-  const resetContent = () => {
+    // Subscribe to realtime changes
+    const channel = supabase
+      .channel("site_content_changes")
+      .on("postgres_changes", { event: "UPDATE", schema: "public", table: "site_content", filter: "id=eq.main" }, (payload) => {
+        if (payload.new?.content && Object.keys(payload.new.content as object).length > 0) {
+          setContent({ ...defaultContent, ...(payload.new.content as Partial<SiteContent>) });
+        }
+      })
+      .subscribe();
+
+    return () => { supabase.removeChannel(channel); };
+  }, []);
+
+  // Save to Supabase (debounced via the admin panel)
+  const saveToDb = useCallback(async (newContent: SiteContent) => {
+    setSaving(true);
+    await supabase
+      .from("site_content")
+      .update({ content: JSON.parse(JSON.stringify(newContent)) })
+      .eq("id", "main");
+    setSaving(false);
+  }, []);
+
+  const updateContent = useCallback((partial: Partial<SiteContent>) => {
+    setContent((prev) => {
+      const updated = { ...prev, ...partial };
+      saveToDb(updated);
+      return updated;
+    });
+  }, [saveToDb]);
+
+  const resetContent = useCallback(() => {
     setContent(defaultContent);
-    localStorage.removeItem(STORAGE_KEY);
-  };
+    saveToDb(defaultContent);
+  }, [saveToDb]);
 
-  const getWhatsAppUrl = () => {
+  const getWhatsAppUrl = useCallback(() => {
     return `https://wa.me/${content.whatsappNumber}?text=${encodeURIComponent(content.whatsappMessage)}`;
-  };
+  }, [content.whatsappNumber, content.whatsappMessage]);
+
+  if (!loaded) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-background">
+        <div className="animate-spin w-8 h-8 border-4 border-primary border-t-transparent rounded-full" />
+      </div>
+    );
+  }
 
   return (
-    <ContentContext.Provider value={{ content, updateContent, resetContent, getWhatsAppUrl }}>
+    <ContentContext.Provider value={{ content, updateContent, resetContent, getWhatsAppUrl, saving }}>
       {children}
     </ContentContext.Provider>
   );

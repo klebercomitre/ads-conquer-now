@@ -1,16 +1,18 @@
 import { useState } from "react";
 import { useContent, type SiteContent, type Testimonial, type FaqItem, type PainItem, type SolutionItem, type StepItem, type BenefitItem, type ObjectionItem } from "@/contexts/ContentContext";
+import { useAuth } from "@/hooks/useAuth";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Trash2, Plus, ArrowLeft, RotateCcw } from "lucide-react";
+import { Trash2, Plus, ArrowLeft, RotateCcw, LogOut, Loader2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
 
 const AdminPanel = () => {
-  const { content, updateContent, resetContent } = useContent();
+  const { content, updateContent, resetContent, saving } = useContent();
+  const { signOut } = useAuth();
 
   const handleReset = () => {
     if (window.confirm("Tem certeza? Isso vai resetar TODO o conteúdo para o padrão.")) {
@@ -31,10 +33,17 @@ const AdminPanel = () => {
             </Link>
             <h1 className="text-lg font-bold text-foreground">Painel Administrativo</h1>
           </div>
-          <button onClick={handleReset} className="flex items-center gap-2 text-sm text-destructive hover:text-destructive/80 transition-colors">
-            <RotateCcw className="w-4 h-4" />
-            Resetar tudo
-          </button>
+          <div className="flex items-center gap-4">
+            {saving && <span className="flex items-center gap-1 text-xs text-muted-foreground"><Loader2 className="w-3 h-3 animate-spin" />Salvando...</span>}
+            <button onClick={handleReset} className="flex items-center gap-2 text-sm text-destructive hover:text-destructive/80 transition-colors">
+              <RotateCcw className="w-4 h-4" />
+              Resetar tudo
+            </button>
+            <button onClick={signOut} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <LogOut className="w-4 h-4" />
+              Sair
+            </button>
+          </div>
         </div>
       </header>
 
