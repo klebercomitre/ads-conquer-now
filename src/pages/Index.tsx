@@ -10,6 +10,8 @@ import { CtaSection } from "@/components/sections/CtaSection";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { FloatingWhatsApp } from "@/components/WhatsAppButton";
+import { ClientsSection } from "@/components/sections/ClientsSection";
+import { FoundersSection } from "@/components/sections/FoundersSection";
 import { useContent } from "@/contexts/ContentContext";
 import { useEffect } from "react";
 
@@ -60,6 +62,8 @@ const Index = () => {
       <PainSection />
       <SolutionSection />
       <HowItWorksSection />
+      <FoundersSection />
+      <ClientsSection />
       <BenefitsSection />
       <TestimonialsSection />
       <ObjectionsSection />
