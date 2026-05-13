@@ -20,26 +20,18 @@ const clients = [
 
 export const ClientsSection = () => {
   return (
-    <section className="py-12 md:py-16 bg-muted/30">
+    <section className="py-20 md:py-24 bg-background border-t border-border">
       <div className="container px-5 md:px-8">
-        <div className="text-center mb-8 md:mb-10">
-          <p className="text-xs md:text-sm font-semibold uppercase tracking-widest text-primary mb-2">
-            Empresas que confiam na Acelera Ads
-          </p>
-          <h2 className="text-xl md:text-3xl font-extrabold text-foreground">
-            Nossos Clientes
-          </h2>
-        </div>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto items-center">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground text-center mb-12 md:mb-16">
+          Empresas que confiam na Acelera Ads
+        </p>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-8 gap-y-12 md:gap-x-16 md:gap-y-16 max-w-5xl mx-auto items-center">
           {clients.map((client) => (
-            <div
-              key={client.name}
-              className="flex items-center justify-center p-3 md:p-4 rounded-xl bg-card border shadow-sm"
-            >
+            <div key={client.name} className="flex items-center justify-center">
               <img
                 src={client.logo}
                 alt={client.name}
-                className="h-14 w-14 md:h-20 md:w-20 object-contain rounded-lg"
+                className="h-16 md:h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300"
               />
             </div>
           ))}

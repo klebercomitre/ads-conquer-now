@@ -5,10 +5,10 @@ export const FooterSection = () => {
   const { content } = useContent();
 
   return (
-    <footer className="py-8 md:py-10 bg-foreground">
+    <footer className="py-12 md:py-16 bg-foreground">
       <div className="container px-5 md:px-8">
-        <div className="flex flex-col items-center gap-3 md:gap-4 text-center">
-          <img src={aceLeraLogo} alt="Acelera Ads" className="h-7 md:h-8 brightness-0 invert opacity-70" />
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          <img src={aceLeraLogo} alt="Acelera Ads" className="h-7 brightness-0 invert opacity-80" />
           <p className="text-background/50 text-xs md:text-sm">{content.footerText}</p>
         </div>
       </div>

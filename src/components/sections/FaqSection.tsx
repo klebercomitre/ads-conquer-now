@@ -11,19 +11,17 @@ export const FaqSection = () => {
   if (!content.sections.faq) return null;
 
   return (
-    <section className="py-14 md:py-20 bg-background">
+    <section className="py-20 md:py-28 bg-background">
       <div className="container px-5 md:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-10 md:mb-14">
-          <h2 className="text-2xl md:text-4xl font-extrabold text-foreground mb-3 md:mb-4">{content.faqTitle}</h2>
-        </div>
         <div className="max-w-3xl mx-auto">
-          <Accordion type="single" collapsible className="space-y-3">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-foreground mb-12 md:mb-16 tracking-tight leading-[1.1]">{content.faqTitle}</h2>
+          <Accordion type="single" collapsible className="border-t border-border">
             {content.faqItems.map((faq, i) => (
-              <AccordionItem key={faq.id} value={`faq-${i}`} className="border rounded-xl px-4 md:px-6 bg-card shadow-card">
-                <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline text-sm md:text-base">
+              <AccordionItem key={faq.id} value={`faq-${i}`} className="border-b border-border">
+                <AccordionTrigger className="text-left font-semibold text-foreground hover:no-underline text-base md:text-lg py-6">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground text-sm md:text-base">
+                <AccordionContent className="text-muted-foreground text-base leading-relaxed pb-6">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
