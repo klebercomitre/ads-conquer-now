@@ -11,7 +11,7 @@ export const BenefitsSection = () => {
       <div className="container px-5 md:px-8">
         <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="space-y-6 md:space-y-8">
-            <h2 className="text-3xl md:text-5xl font-extrabold text-foreground tracking-tight leading-[1.1]">{content.benefitsTitle}</h2>
+            <h2 className="text-2xl md:text-5xl font-extrabold text-foreground tracking-tight leading-[1.1]">{content.benefitsTitle}</h2>
             <div className="space-y-4 border-t border-border pt-6">
               {content.benefitItems.map((b) => (
                 <div key={b.id} className="flex items-start gap-3 pb-4 border-b border-border last:border-b-0">

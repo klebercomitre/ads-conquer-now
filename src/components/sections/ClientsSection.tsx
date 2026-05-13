@@ -22,7 +22,7 @@ export const ClientsSection = () => {
   return (
     <section className="py-20 md:py-24 bg-background border-t border-border">
       <div className="container px-5 md:px-8">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground text-center mb-12 md:mb-16">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground text-center mb-10 md:mb-14">
           Empresas que confiam na Acelera Ads
         </p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-8 gap-y-12 md:gap-x-16 md:gap-y-16 max-w-5xl mx-auto items-center">

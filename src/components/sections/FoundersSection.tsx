@@ -14,7 +14,7 @@ export const FoundersSection = () => {
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
               Quem está por trás da Acelera Ads
             </p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight leading-[1.1]">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight leading-[1.1]">
               Kleber Comitre &amp; Romário Carvalho
             </h2>
             <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-xl">

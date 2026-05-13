@@ -8,7 +8,7 @@ export const PainSection = () => {
     <section className="py-20 md:py-28 bg-background">
       <div className="container px-5 md:px-8">
         <div className="max-w-2xl mb-14 md:mb-20">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-foreground mb-4 tracking-tight leading-[1.1]">{content.painTitle}</h2>
+          <h2 className="text-2xl md:text-5xl font-extrabold text-foreground mb-4 tracking-tight leading-[1.1]">{content.painTitle}</h2>
           <p className="text-muted-foreground text-base md:text-lg leading-relaxed">{content.painSubtitle}</p>
         </div>
         <div className="grid gap-x-10 gap-y-10 md:grid-cols-2 max-w-5xl mx-auto">
