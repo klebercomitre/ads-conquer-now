@@ -58,13 +58,13 @@ const Index = () => {
   return (
     <main className="overflow-hidden">
       <HeroSection />
+      <ClientsSection />
       <AuthoritySection />
       <PainSection />
       <SolutionSection />
       <HowItWorksSection />
-      <FoundersSection />
-      <ClientsSection />
       <BenefitsSection />
+      <FoundersSection />
       <TestimonialsSection />
       <ObjectionsSection />
       <CtaSection />
