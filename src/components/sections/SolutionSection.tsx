@@ -12,7 +12,7 @@ export const SolutionSection = () => {
     <section className="py-20 md:py-28 bg-gradient-hero text-primary-foreground">
       <div className="container px-5 md:px-8">
         <div className="max-w-3xl mx-auto mb-14 md:mb-20 text-center">
-          <h2 className="text-3xl md:text-5xl font-extrabold mb-5 tracking-tight leading-[1.1]">{content.solutionTitle}</h2>
+          <h2 className="text-2xl md:text-5xl font-extrabold mb-5 tracking-tight leading-[1.1]">{content.solutionTitle}</h2>
           <p className="text-primary-foreground/65 text-base md:text-lg leading-relaxed">{content.solutionSubtitle}</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-primary-foreground/10 border border-primary-foreground/10 max-w-5xl mx-auto">

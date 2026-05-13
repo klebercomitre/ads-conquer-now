@@ -11,7 +11,7 @@ export const HeroSection = () => {
       <div className="container relative z-10 py-20 md:py-28 px-5 md:px-8">
         <div className="max-w-4xl mx-auto text-center space-y-8 md:space-y-10">
           <img src={aceLeraLogo} alt="Acelera Ads" className="h-16 md:h-20 mx-auto brightness-0 invert opacity-90" />
-          <h1 className="text-[2.5rem] md:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-[-0.02em] text-primary-foreground">
+          <h1 className="text-3xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-[-0.02em] text-primary-foreground">
             {content.heroHeadline}{" "}
             <span className="text-whatsapp">{content.heroHighlight}</span>
           </h1>

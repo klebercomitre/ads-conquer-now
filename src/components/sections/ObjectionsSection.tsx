@@ -8,7 +8,7 @@ export const ObjectionsSection = () => {
     <section className="py-20 md:py-28 bg-background">
       <div className="container px-5 md:px-8">
         <div className="max-w-2xl mb-14 md:mb-20">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-foreground tracking-tight leading-[1.1]">{content.objectionsTitle}</h2>
+          <h2 className="text-2xl md:text-5xl font-extrabold text-foreground tracking-tight leading-[1.1]">{content.objectionsTitle}</h2>
         </div>
         <div className="max-w-3xl mx-auto divide-y divide-border border-y border-border">
           {content.objectionItems.map((obj) => (

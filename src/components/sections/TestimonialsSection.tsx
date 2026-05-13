@@ -8,7 +8,7 @@ export const TestimonialsSection = () => {
     <section className="py-20 md:py-28 bg-secondary">
       <div className="container px-5 md:px-8">
         <div className="max-w-2xl mb-14 md:mb-20">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-foreground mb-4 tracking-tight leading-[1.1]">{content.testimonialsTitle}</h2>
+          <h2 className="text-2xl md:text-5xl font-extrabold text-foreground mb-4 tracking-tight leading-[1.1]">{content.testimonialsTitle}</h2>
           <p className="text-muted-foreground text-base md:text-lg leading-relaxed">{content.testimonialsSubtitle}</p>
         </div>
         <div className="grid gap-10 md:gap-12 md:grid-cols-3 max-w-6xl mx-auto">
