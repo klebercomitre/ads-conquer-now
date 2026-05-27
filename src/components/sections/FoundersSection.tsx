@@ -7,7 +7,11 @@ export const FoundersSection = () => {
         <div className="max-w-5xl mx-auto grid md:grid-cols-[auto,1fr] items-center gap-10 md:gap-14">
           <img
             src={foundersPhoto}
-            alt="Kleber Comitre e Romário Carvalho, fundadores da Acelera Ads"
+            alt="Kleber Comitre e Romário Carvalho, fundadores da Acelera Ads — agência de tráfego pago em Umuarama PR"
+            loading="lazy"
+            decoding="async"
+            width="320"
+            height="320"
             className="w-56 h-56 md:w-80 md:h-80 object-cover mx-auto md:mx-0"
           />
           <div className="text-center md:text-left space-y-5 md:space-y-6">
