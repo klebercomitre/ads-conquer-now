@@ -31,6 +31,8 @@ export const ClientsSection = () => {
               <img
                 src={client.logo}
                 alt={client.name}
+                loading="lazy"
+                decoding="async"
                 className="h-16 md:h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300"
               />
             </div>
