@@ -102,9 +102,9 @@ export const defaultContent: SiteContent = {
   whatsappMessage: "Olá! Quero saber mais sobre a gestão de tráfego pago.",
   metaPixelId: "000000000000000",
   gtmId: "GTM-XXXXXXX",
-  heroHeadline: "Pare de gastar dinheiro com anúncios que",
-  heroHighlight: "não vendem.",
-  heroSubheadline: "Na Acelera Ads, transformamos investimento em tráfego em vendas previsíveis todos os dias. Chega de jogar dinheiro fora com campanhas que não dão retorno.",
+  heroHeadline: "Já anuncia e não vende — ou ainda não anuncia e perde clientes todo dia?",
+  heroHighlight: "A gente resolve os dois.",
+  heroSubheadline: "Para quem já investe em Meta e Google Ads sem retorno, e para quem ainda depende só da indicação. Construímos um motor de vendas previsível, com estratégia, dados e gestão sob medida.",
   heroCtaText: "Falar no WhatsApp",
   heroBadges: ["✓ Meta Ads", "✓ Google Ads", "✓ +30 negócios atendidos", "✓ Foco em ROI"],
   authorityStats: [
