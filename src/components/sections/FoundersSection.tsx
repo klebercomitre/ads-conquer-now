@@ -7,7 +7,7 @@ export const FoundersSection = () => {
         <div className="max-w-5xl mx-auto grid md:grid-cols-[auto,1fr] items-center gap-10 md:gap-14">
           <img
             src={foundersPhoto}
-            alt="Kleber Comitre e Romário Carvalho, fundadores da Acelera Ads — agência de tráfego pago em Umuarama PR"
+            alt="Kleber Comitre e Romário Carvalho, fundadores da Acelera Ads, agência de tráfego pago em Umuarama PR"
             loading="lazy"
             decoding="async"
             width="320"
@@ -24,7 +24,7 @@ export const FoundersSection = () => {
             <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-xl">
               Somos especialistas em tráfego pago com experiência real no mercado.
               Já ajudamos mais de 30 negócios a transformar anúncios em vendas previsíveis.
-              Acreditamos que cada real investido precisa gerar resultado — e é isso que entregamos todos os dias.
+              Acreditamos que cada real investido precisa gerar resultado, e é isso que entregamos todos os dias.
             </p>
             <div className="flex flex-wrap gap-x-6 gap-y-2 justify-center md:justify-start text-sm text-foreground pt-2">
               <span>Meta Ads</span>

@@ -55,7 +55,7 @@ export const FooterSection = () => {
             </a>
             <div className="flex items-start gap-2 text-background/70 text-sm">
               <MapPin className="w-4 h-4 shrink-0 mt-0.5" aria-hidden="true" />
-              <span>Umuarama — Paraná, Brasil</span>
+              <span>Umuarama, Paraná, Brasil</span>
             </div>
           </div>
 

@@ -102,7 +102,7 @@ export const defaultContent: SiteContent = {
   whatsappMessage: "Olá! Quero saber mais sobre a gestão de tráfego pago.",
   metaPixelId: "000000000000000",
   gtmId: "GTM-XXXXXXX",
-  heroHeadline: "Já anuncia e não vende — ou ainda não anuncia e perde clientes todo dia?",
+  heroHeadline: "Já anuncia e não vende? Ou ainda não anuncia e perde clientes todo dia?",
   heroHighlight: "A gente resolve os dois.",
   heroSubheadline: "Para quem já investe em Meta e Google Ads sem retorno, e para quem ainda depende só da indicação. Construímos um motor de vendas previsível, com estratégia, dados e gestão sob medida.",
   heroCtaText: "Falar no WhatsApp",
@@ -175,7 +175,7 @@ export const defaultContent: SiteContent = {
     { id: "4", question: "Preciso ter site ou loja virtual?", answer: "Não necessariamente. Podemos trabalhar com landing pages, Instagram, WhatsApp e outras estratégias. Avaliamos o melhor caminho no diagnóstico." },
     { id: "5", question: "Como funciona o contrato?", answer: "Trabalhamos com planos mensais, sem fidelidade longa. Acreditamos que os resultados falam por si só." },
   ],
-  footerText: `© ${new Date().getFullYear()} Acelera Ads — Acelerador de Vendas. Todos os direitos reservados.`,
+  footerText: `© ${new Date().getFullYear()} Acelera Ads · Acelerador de Vendas. Todos os direitos reservados.`,
   sections: {
     hero: true, authority: true, pain: true, solution: true, howItWorks: true,
     benefits: true, testimonials: true, objections: true, cta: true, faq: true,
