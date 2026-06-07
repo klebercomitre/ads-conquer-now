@@ -89,8 +89,8 @@ const TermsOfUse = () => {
           <section>
             <h2 className="text-2xl font-semibold mt-8 mb-3">9. Contato</h2>
             <p>
-              Acelera Ads — CNPJ 64.181.146/0001-63<br />
-              Umuarama/PR — Brasil<br />
+              Acelera Ads · CNPJ 64.181.146/0001-63<br />
+              Umuarama/PR, Brasil<br />
               E-mail: <a href="mailto:contato@aceleraadsumuarama.com.br" className="text-primary hover:underline">contato@aceleraadsumuarama.com.br</a>
             </p>
           </section>
