@@ -1,9 +1,28 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import aceLeraLogo from "@/assets/acelera-logo.svg";
 
 const TermsOfUse = () => {
   return (
     <main className="min-h-screen bg-background">
+      <Helmet>
+        <title>Termos de Uso | Acelera Ads Umuarama</title>
+        <meta name="description" content="Termos de Uso do site da Acelera Ads. Regras de utilização, responsabilidades e condições de contratação dos serviços de tráfego pago." />
+        <link rel="canonical" href="https://aceleraadsumuarama.com.br/termos" />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Termos de Uso | Acelera Ads" />
+        <meta property="og:description" content="Regras de utilização e condições de contratação dos serviços da Acelera Ads." />
+        <meta property="og:url" content="https://aceleraadsumuarama.com.br/termos" />
+        <meta property="og:type" content="article" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://aceleraadsumuarama.com.br/" },
+            { "@type": "ListItem", "position": 2, "name": "Termos de Uso", "item": "https://aceleraadsumuarama.com.br/termos" }
+          ]
+        })}</script>
+      </Helmet>
       <header className="border-b border-border">
         <div className="container px-5 md:px-8 py-5 flex items-center justify-between">
           <Link to="/" aria-label="Voltar para a página inicial">
