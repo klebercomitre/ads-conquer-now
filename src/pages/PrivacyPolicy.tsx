@@ -1,9 +1,28 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import aceLeraLogo from "@/assets/acelera-logo.svg";
 
 const PrivacyPolicy = () => {
   return (
     <main className="min-h-screen bg-background">
+      <Helmet>
+        <title>Política de Privacidade | Acelera Ads Umuarama</title>
+        <meta name="description" content="Política de Privacidade da Acelera Ads. Saiba como coletamos, utilizamos e protegemos seus dados pessoais conforme a LGPD." />
+        <link rel="canonical" href="https://aceleraadsumuarama.com.br/privacidade" />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Política de Privacidade | Acelera Ads" />
+        <meta property="og:description" content="Como a Acelera Ads coleta, utiliza e protege seus dados pessoais conforme a LGPD." />
+        <meta property="og:url" content="https://aceleraadsumuarama.com.br/privacidade" />
+        <meta property="og:type" content="article" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://aceleraadsumuarama.com.br/" },
+            { "@type": "ListItem", "position": 2, "name": "Política de Privacidade", "item": "https://aceleraadsumuarama.com.br/privacidade" }
+          ]
+        })}</script>
+      </Helmet>
       <header className="border-b border-border">
         <div className="container px-5 md:px-8 py-5 flex items-center justify-between">
           <Link to="/" aria-label="Voltar para a página inicial">
