@@ -67,7 +67,7 @@ export const AuthoritySection = () => {
               key={stat.id || i}
               className="text-center px-4 py-4 md:py-2 md:border-r md:border-border last:md:border-r-0"
             >
-              <div className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground tracking-tight">
+              <div className={`font-extrabold text-foreground tracking-tight ${stat.value === "✓" ? "text-3xl md:text-4xl text-primary" : "text-4xl md:text-5xl lg:text-6xl"}`}>
                 <AnimatedNumber value={stat.value} />
               </div>
               <div className="text-xs md:text-sm text-muted-foreground mt-3 uppercase tracking-wider">
