@@ -20,12 +20,12 @@ const clients = [
 
 export const ClientsSection = () => {
   return (
-    <section className="py-20 md:py-24 bg-background border-t border-border">
+    <section className="py-16 md:py-20 bg-background border-t border-border">
       <div className="container px-5 md:px-8">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground text-center mb-10 md:mb-14">
-          Empresas que confiam na Acelera Ads
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground text-center mb-10 md:mb-12">
+          Empresas que decidiram acelerar seus resultados
         </p>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-8 gap-y-12 md:gap-x-16 md:gap-y-16 max-w-5xl mx-auto items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-10 gap-y-10 md:gap-x-16 md:gap-y-12 max-w-5xl mx-auto items-center">
           {clients.map((client) => (
             <div key={client.name} className="flex items-center justify-center">
               <img
@@ -33,7 +33,7 @@ export const ClientsSection = () => {
                 alt={client.name}
                 loading="lazy"
                 decoding="async"
-                className="h-16 md:h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300"
+                className="h-14 md:h-16 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-500"
               />
             </div>
           ))}
