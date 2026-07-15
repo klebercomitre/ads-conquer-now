@@ -61,7 +61,7 @@ export const AuthoritySection = () => {
             )}
           </div>
         )}
-        <div className={`grid grid-cols-2 md:grid-cols-${Math.min(stats.length, 5)} gap-y-8 max-w-5xl mx-auto`}>
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-y-8 max-w-5xl mx-auto">
           {stats.map((stat, i) => (
             <div
               key={stat.id || i}
