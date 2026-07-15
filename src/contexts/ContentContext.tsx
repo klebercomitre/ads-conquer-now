@@ -44,13 +44,31 @@ export interface ObjectionItem {
   answer: string;
 }
 
+export interface OutcomeItem { id: string; title: string; desc?: string; }
+export interface OtherServiceItem { id: string; title: string; desc: string; }
+export interface WhyUsItem { id: string; title: string; desc: string; }
+export interface CaseItem {
+  id: string;
+  logoKey: string;
+  name: string;
+  segment: string;
+  objective: string;
+  strategy: string;
+  result: string;
+}
+export interface AnimatedStat { id: string; value: string; label: string; }
+
 export interface SectionVisibility {
   hero: boolean;
   authority: boolean;
+  grow: boolean;
   pain: boolean;
+  outcomes: boolean;
   solution: boolean;
   howItWorks: boolean;
   benefits: boolean;
+  cases: boolean;
+  whyUs: boolean;
   testimonials: boolean;
   objections: boolean;
   cta: boolean;
@@ -75,6 +93,8 @@ export interface SiteContent {
   solutionSubtitle: string;
   solutionItems: SolutionItem[];
   solutionCtaText: string;
+  otherServicesTitle: string;
+  otherServicesItems: OtherServiceItem[];
   howTitle: string;
   howSubtitle: string;
   howSteps: StepItem[];
@@ -83,6 +103,20 @@ export interface SiteContent {
   benefitsCtaText: string;
   benefitsHighlightValue: string;
   benefitsHighlightLabel: string;
+  growTitle: string;
+  growParagraphs: string[];
+  outcomesTitle: string;
+  outcomesSubtitle: string;
+  outcomesItems: OutcomeItem[];
+  whyUsTitle: string;
+  whyUsSubtitle: string;
+  whyUsItems: WhyUsItem[];
+  casesTitle: string;
+  casesSubtitle: string;
+  cases: CaseItem[];
+  animatedStatsTitle: string;
+  animatedStatsSubtitle: string;
+  animatedStats: AnimatedStat[];
   testimonialsTitle: string;
   testimonialsSubtitle: string;
   testimonials: Testimonial[];
@@ -102,54 +136,107 @@ export const defaultContent: SiteContent = {
   whatsappMessage: "Olá! Quero saber mais sobre a gestão de tráfego pago.",
   metaPixelId: "000000000000000",
   gtmId: "GTM-XXXXXXX",
-  heroHeadline: "Já anuncia e não vende? Ou ainda não anuncia e perde clientes todo dia?",
+  heroHeadline: "Já anuncia e não vende? Ou ainda não anuncia e perde clientes todos os dias?",
   heroHighlight: "A gente resolve os dois.",
-  heroSubheadline: "Para quem já investe em Meta e Google Ads sem retorno, e para quem ainda depende só da indicação. Construímos um motor de vendas previsível, com estratégia, dados e gestão sob medida.",
-  heroCtaText: "Falar no WhatsApp",
-  heroBadges: ["✓ Meta Ads", "✓ Google Ads", "✓ +30 negócios atendidos", "✓ Foco em ROI"],
+  heroSubheadline: "Na Acelera Ads, transformamos investimento em marketing em clientes reais. Criamos estratégias com Google Ads e Meta Ads para aumentar suas vendas, gerar oportunidades todos os dias e fazer sua empresa crescer com previsibilidade.",
+  heroCtaText: "Quero uma Análise Gratuita",
+  heroBadges: ["✓ Google Ads", "✓ Meta Ads", "✓ +30 empresas atendidas", "✓ Foco em resultados"],
   authorityStats: [
-    { value: "+30", label: "Negócios atendidos" },
-    { value: "Meta & Google", label: "Ads especializados" },
-    { value: "ROI", label: "Foco em resultados reais" },
-    { value: "100%", label: "Orientado por dados" },
+    { value: "+30", label: "Empresas atendidas" },
+    { value: "Google & Meta", label: "Ads certificados" },
+    { value: "Diária", label: "Otimização de campanhas" },
+    { value: "100%", label: "Foco em resultado" },
   ],
-  painTitle: "Isso te parece familiar?",
-  painSubtitle: "Se você já passou por alguma dessas situações, saiba que não é culpa sua. A maioria dos negócios sofre com tráfego mal gerenciado.",
+  painTitle: "Se você é dono de empresa, provavelmente já sentiu isso",
+  painSubtitle: "A maior parte dos negócios trava por um dos motivos abaixo. Não é falta de esforço — é falta de estratégia certa.",
   painItems: [
-    { id: "1", title: "Já investiu e não teve retorno?", desc: "Você colocou dinheiro em anúncios, mas as vendas não vieram. Parece que jogou dinheiro fora." },
-    { id: "2", title: "Leads desqualificados?", desc: "Os contatos que chegam não compram, não respondem ou não são o público certo." },
-    { id: "3", title: "Falta de previsibilidade?", desc: "Não sabe quantos clientes vai ter no próximo mês. Vive na montanha-russa de vendas." },
-    { id: "4", title: "Não entende os números?", desc: "Relatórios confusos, métricas que não fazem sentido e nenhuma clareza sobre o que está funcionando." },
+    { id: "1", title: "O movimento caiu e você não sabe o motivo", desc: "As vendas oscilam, o telefone toca menos e você não tem clareza do que mudou." },
+    { id: "2", title: "Sua empresa depende apenas de indicação", desc: "Quando a indicação não vem, o mês trava. Falta um canal previsível de novos clientes." },
+    { id: "3", title: "Você investe em anúncios e não vê retorno", desc: "Já pagou por anúncios sem entender o que funcionou — e sente que gastou à toa." },
+    { id: "4", title: "Seus concorrentes aparecem mais que você", desc: "Quando o cliente pesquisa no Google ou nas redes, é a marca deles que aparece primeiro." },
+    { id: "5", title: "Você precisa vender mais, mas não sabe por onde começar", desc: "Existem muitas opções — Google, Meta, TikTok, site — e falta um plano claro." },
+    { id: "6", title: "Você quer crescer, mas falta previsibilidade", desc: "Meses bons e meses ruins impedem qualquer plano sério de expansão." },
   ],
-  solutionTitle: "A Acelera Ads resolve isso pra você",
-  solutionSubtitle: "Não vendemos cliques. Vendemos resultados.",
+  solutionTitle: "Como colocamos sua empresa na frente de quem quer comprar",
+  solutionSubtitle: "Não vendemos plataformas. Entregamos oportunidades reais de venda.",
   solutionItems: [
-    { id: "1", title: "Estratégia personalizada", desc: "Cada negócio é único. Criamos um plano sob medida para o seu." },
-    { id: "2", title: "Gestão profissional", desc: "Campanhas criadas e gerenciadas por especialistas certificados." },
-    { id: "3", title: "Otimização contínua", desc: "Monitoramento diário e ajustes para maximizar seus resultados." },
-    { id: "4", title: "Análise de dados", desc: "Decisões baseadas em números reais, não em achismos." },
+    { id: "1", title: "Google Ads", desc: "Sua empresa aparece exatamente quando alguém está procurando pelo seu produto ou serviço — pronto para comprar." },
+    { id: "2", title: "Meta Ads", desc: "Alcance milhares de pessoas no Instagram e Facebook e transforme visualizações em clientes reais." },
+    { id: "3", title: "Landing Pages", desc: "Páginas desenvolvidas para converter visitantes em orçamentos, agendamentos e vendas." },
   ],
-  solutionCtaText: "Quero resultados reais",
-  howTitle: "Como funciona",
-  howSubtitle: "Um processo simples e transparente para transformar anúncios em vendas.",
+  solutionCtaText: "Quero vender mais",
+  otherServicesTitle: "Outras soluções",
+  otherServicesItems: [
+    { id: "1", title: "TikTok Ads", desc: "Alcance uma nova audiência com anúncios em vídeo de alto engajamento." },
+    { id: "2", title: "Consultoria", desc: "Direção estratégica para times internos que já anunciam e querem escalar." },
+    { id: "3", title: "Auditoria de campanhas", desc: "Avaliamos suas campanhas atuais e mostramos onde está o dinheiro perdido." },
+  ],
+  howTitle: "Como começamos a trabalhar juntos",
+  howSubtitle: "Um processo simples, claro e sem enrolação para transformar seu investimento em vendas.",
   howSteps: [
-    { id: "1", step: "01", title: "Diagnóstico", desc: "Analisamos seu negócio, público e concorrência a fundo." },
-    { id: "2", step: "02", title: "Estratégia", desc: "Criamos o plano ideal para atrair os clientes certos." },
-    { id: "3", step: "03", title: "Implementação", desc: "Colocamos as campanhas no ar com precisão cirúrgica." },
-    { id: "4", step: "04", title: "Otimização e escala", desc: "Melhoramos continuamente para escalar seus resultados." },
+    { id: "1", step: "01", title: "Análise gratuita", desc: "Entendemos seu negócio, seus objetivos e o momento atual da sua empresa." },
+    { id: "2", step: "02", title: "Estratégia sob medida", desc: "Definimos o plano ideal para trazer os clientes certos, no momento certo." },
+    { id: "3", step: "03", title: "Campanhas no ar", desc: "Criamos, configuramos e colocamos tudo para rodar com precisão." },
+    { id: "4", step: "04", title: "Otimização e crescimento", desc: "Acompanhamos os números todos os dias para escalar seus resultados." },
   ],
-  benefitsTitle: "O que você ganha com a Acelera Ads",
+  benefitsTitle: "O que muda quando sua empresa começa a anunciar da forma certa",
   benefitItems: [
-    { id: "1", text: "Mais clientes qualificados todos os dias" },
-    { id: "2", text: "Aumento real nas vendas" },
-    { id: "3", text: "Previsibilidade de faturamento" },
-    { id: "4", text: "Crescimento escalável e sustentável" },
-    { id: "5", text: "Menos desperdício de dinheiro em anúncios" },
-    { id: "6", text: "Relatórios claros e transparentes" },
+    { id: "1", text: "Mais clientes entrando em contato todos os dias" },
+    { id: "2", text: "Mais pedidos de orçamento chegando" },
+    { id: "3", text: "Mais vendas fechadas com previsibilidade" },
+    { id: "4", text: "Mais reconhecimento da sua marca na cidade" },
+    { id: "5", text: "Presença forte no Google e nas redes sociais" },
+    { id: "6", text: "Investimento feito com estratégia e acompanhamento" },
   ],
-  benefitsCtaText: "Começar agora",
+  benefitsCtaText: "Quero começar a vender mais",
   benefitsHighlightValue: "3x",
-  benefitsHighlightLabel: "mais resultados\ncom tráfego inteligente",
+  benefitsHighlightLabel: "mais resultado\ncom estratégia certa",
+  growTitle: "Sua empresa merece crescer todos os meses",
+  growParagraphs: [
+    "Todos os dias pessoas procuram no Google, Instagram e Facebook por produtos e serviços como os seus.",
+    "A pergunta é: quando elas procuram, encontram sua empresa ou encontram o seu concorrente?",
+    "É exatamente isso que fazemos. Criamos campanhas inteligentes para colocar sua empresa na frente das pessoas certas, no momento certo — aumentando as chances de gerar novos clientes todos os dias.",
+  ],
+  outcomesTitle: "O que muda quando sua empresa anuncia da forma certa",
+  outcomesSubtitle: "Estes são os resultados que os empresários passam a ver quando param de improvisar e começam a trabalhar com estratégia.",
+  outcomesItems: [
+    { id: "1", title: "Mais clientes entrando em contato", desc: "Seu WhatsApp e telefone passam a receber contatos qualificados de quem realmente quer comprar." },
+    { id: "2", title: "Mais pedidos de orçamento", desc: "As oportunidades param de depender só da indicação e passam a chegar de forma constante." },
+    { id: "3", title: "Mais vendas", desc: "Com público certo e mensagem certa, sua taxa de fechamento cresce naturalmente." },
+    { id: "4", title: "Mais reconhecimento da marca", desc: "Sua empresa vira referência para o cliente que ainda nem sabia que precisava de você." },
+    { id: "5", title: "Presença no Google e nas redes", desc: "Você aparece quando o cliente pesquisa e continua aparecendo enquanto ele decide." },
+    { id: "6", title: "Investimento com estratégia", desc: "Cada real gasto passa a ter propósito, acompanhamento e prestação de contas." },
+  ],
+  whyUsTitle: "Por que escolher a Acelera Ads",
+  whyUsSubtitle: "O que nos torna diferentes é o compromisso real com o resultado do seu negócio.",
+  whyUsItems: [
+    { id: "1", title: "Atendimento próximo", desc: "Você fala direto com quem cuida das suas campanhas, sem intermediários." },
+    { id: "2", title: "Estratégias personalizadas", desc: "Nada de fórmula pronta. Cada empresa recebe um plano sob medida." },
+    { id: "3", title: "Otimização diária", desc: "Ajustamos as campanhas todos os dias para melhorar o retorno." },
+    { id: "4", title: "Relatórios claros", desc: "Você entende exatamente o que está acontecendo com o seu investimento." },
+    { id: "5", title: "Foco em retorno", desc: "Nosso trabalho é medido pelo dinheiro que entra no seu caixa, não por cliques." },
+    { id: "6", title: "Decisões baseadas em dados", desc: "Nada de achismo. Cada movimento é feito com base nos números." },
+  ],
+  casesTitle: "Empresas que decidiram acelerar seus resultados",
+  casesSubtitle: "Negócios reais que confiam no nosso trabalho para crescer com previsibilidade.",
+  cases: [
+    { id: "1", logoKey: "solution-cell", name: "Solution Cell", segment: "Assistência técnica de celulares", objective: "Aumentar o volume de clientes na loja física.", strategy: "Google Ads local + Meta Ads segmentado por bairro.", result: "" },
+    { id: "2", logoKey: "arena-castelo", name: "Arena Castelo", segment: "Esporte e lazer", objective: "Encher a agenda de reservas da arena.", strategy: "Meta Ads focado em times e grupos + landing page de reserva.", result: "" },
+    { id: "3", logoKey: "senhor-pizza", name: "Senhor Pizza", segment: "Alimentação / delivery", objective: "Aumentar o número de pedidos por dia.", strategy: "Meta Ads com foco em promoção + campanhas de fidelização.", result: "" },
+    { id: "4", logoKey: "smart-assistencia", name: "Smart Assistência Técnica", segment: "Serviços técnicos", objective: "Gerar orçamentos qualificados todos os dias.", strategy: "Google Ads em palavras de alta intenção + Meta Ads local.", result: "" },
+    { id: "5", logoKey: "ishop-toledo", name: "iShop Toledo", segment: "Varejo de eletrônicos", objective: "Aumentar tráfego qualificado e vendas na loja.", strategy: "Campanhas de venda com foco em produtos de alto giro.", result: "" },
+    { id: "6", logoKey: "favoritta", name: "Favoritta Store", segment: "Moda", objective: "Escalar as vendas online e presenciais.", strategy: "Meta Ads criativo + remarketing para carrinhos abandonados.", result: "" },
+    { id: "7", logoKey: "fretesja", name: "FretesJá", segment: "Logística", objective: "Captar clientes que precisam de frete com urgência.", strategy: "Google Ads com foco em intenção de compra imediata.", result: "" },
+  ],
+  animatedStatsTitle: "Números que mostram nosso compromisso",
+  animatedStatsSubtitle: "Trabalhamos todos os dias para fazer sua empresa vender mais.",
+  animatedStats: [
+    { id: "1", value: "30", label: "Empresas atendidas" },
+    { id: "2", value: "1", label: "Google Ads" },
+    { id: "3", value: "1", label: "Meta Ads" },
+    { id: "4", value: "1", label: "TikTok Ads" },
+    { id: "5", value: "1", label: "Landing Pages" },
+  ],
   testimonialsTitle: "Quem já acelerou com a gente",
   testimonialsSubtitle: "Resultados reais de empresários que decidiram parar de perder dinheiro.",
   testimonials: [
@@ -164,21 +251,23 @@ export const defaultContent: SiteContent = {
     { id: "3", question: '"Tráfego pago é caro"', answer: "Caro é perder vendas todos os dias por não ter presença online profissional. Nossos clientes veem retorno já nas primeiras semanas." },
     { id: "4", question: '"Funciona para o meu nicho?"', answer: "Atendemos desde e-commerces até negócios locais. Se seu público está na internet, podemos alcançá-lo." },
   ],
-  ctaTitle: "Quer transformar anúncios em vendas todos os dias?",
-  ctaSubtitle: "Fale agora com um especialista e descubra como escalar seu negócio com tráfego pago inteligente.",
-  ctaButtonText: "Chamar no WhatsApp agora",
+  ctaTitle: "Sua empresa pode vender mais.",
+  ctaSubtitle: "Todos os dias clientes procuram empresas como a sua. A única pergunta é: eles estão encontrando você ou seu concorrente? Solicite uma análise gratuita e descubra como podemos ajudar sua empresa a crescer.",
+  ctaButtonText: "Falar com um Especialista",
   faqTitle: "Perguntas frequentes",
   faqItems: [
-    { id: "1", question: "Quanto preciso investir em anúncios?", answer: "O investimento varia conforme o seu nicho e seus objetivos. Na reunião de diagnóstico, sugerimos o valor ideal para o seu caso. Trabalhamos com negócios a partir de R$ 1.000/mês em mídia." },
-    { id: "2", question: "Em quanto tempo vejo resultado?", answer: "Os primeiros resultados costumam aparecer entre 7 e 15 dias. A otimização completa leva em torno de 30 a 60 dias para atingir o potencial máximo." },
-    { id: "3", question: "Vocês atendem qualquer tipo de negócio?", answer: "Atendemos diversos segmentos: e-commerces, negócios locais, prestadores de serviço, infoprodutores e mais. Se o seu público está na internet, podemos ajudar." },
-    { id: "4", question: "Preciso ter site ou loja virtual?", answer: "Não necessariamente. Podemos trabalhar com landing pages, Instagram, WhatsApp e outras estratégias. Avaliamos o melhor caminho no diagnóstico." },
-    { id: "5", question: "Como funciona o contrato?", answer: "Trabalhamos com planos mensais, sem fidelidade longa. Acreditamos que os resultados falam por si só." },
+    { id: "1", question: "Vou realmente vender mais com a Acelera Ads?", answer: "Nosso trabalho é feito para gerar oportunidades reais de venda. Combinamos estratégia, criativos e otimização diária para colocar sua empresa na frente de quem quer comprar. Não prometemos milagre — prometemos método, transparência e foco em resultado." },
+    { id: "2", question: "Quanto preciso investir para começar?", answer: "O investimento ideal depende do seu segmento e da sua meta. Na análise gratuita mostramos o valor mais indicado para o seu caso. Normalmente atendemos empresas a partir de R$ 1.000/mês em mídia." },
+    { id: "3", question: "Em quanto tempo começo a ver resultado?", answer: "Os primeiros resultados costumam aparecer entre 7 e 15 dias após o início das campanhas. O potencial máximo é alcançado entre 30 e 60 dias, com otimização contínua." },
+    { id: "4", question: "Vocês atendem meu tipo de empresa?", answer: "Atendemos comércios locais, prestadores de serviço, e-commerces, indústrias e clínicas em Umuarama e em todo o Brasil. Se seu cliente está no Google ou nas redes sociais, podemos ajudar." },
+    { id: "5", question: "Preciso ter site ou loja virtual?", answer: "Não é obrigatório. Trabalhamos também com landing pages, Instagram e WhatsApp. Definimos o melhor caminho na análise inicial." },
+    { id: "6", question: "Como funciona o contrato?", answer: "Planos mensais, sem fidelidade longa. Acreditamos que os resultados devem falar por si só a cada mês." },
   ],
   footerText: `© ${new Date().getFullYear()} Acelera Ads · Acelerador de Vendas. Todos os direitos reservados.`,
   sections: {
-    hero: true, authority: true, pain: true, solution: true, howItWorks: true,
-    benefits: true, testimonials: true, objections: true, cta: true, faq: true,
+    hero: true, authority: true, grow: true, pain: true, outcomes: true,
+    solution: true, howItWorks: true, benefits: false, cases: true, whyUs: true,
+    testimonials: false, objections: false, cta: true, faq: true,
   },
 };
 

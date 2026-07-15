@@ -16,22 +16,23 @@ export const FoundersSection = () => {
           />
           <div className="text-center md:text-left space-y-5 md:space-y-6">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-              Quem está por trás da Acelera Ads
+              Nossa missão
             </p>
             <h2 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight leading-[1.1]">
-              Kleber Comitre &amp; Romário Carvalho
+              Ajudar empresas a venderem mais, todos os meses.
             </h2>
             <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-xl">
-              Somos especialistas em tráfego pago com experiência real no mercado.
-              Já ajudamos mais de 30 negócios a transformar anúncios em vendas previsíveis.
-              Acreditamos que cada real investido precisa gerar resultado, e é isso que entregamos todos os dias.
+              Fundada por Kleber Comitre e Romário Carvalho, a Acelera Ads nasceu para
+              resolver um problema real: empresas que investem em anúncios sem clareza
+              nem resultado. Nosso trabalho é simples de dizer e exigente de fazer —
+              transformar cada real investido em novos clientes para o seu negócio.
             </p>
             <div className="flex flex-wrap gap-x-6 gap-y-2 justify-center md:justify-start text-sm text-foreground pt-2">
-              <span>Meta Ads</span>
+              <span>Kleber Comitre</span>
               <span className="text-border">·</span>
-              <span>Google Ads</span>
+              <span>Romário Carvalho</span>
               <span className="text-border">·</span>
-              <span>+30 negócios atendidos</span>
+              <span>+30 empresas atendidas</span>
             </div>
           </div>
         </div>

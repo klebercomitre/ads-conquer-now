@@ -12,6 +12,10 @@ import { FooterSection } from "@/components/sections/FooterSection";
 import { FloatingWhatsApp } from "@/components/WhatsAppButton";
 import { ClientsSection } from "@/components/sections/ClientsSection";
 import { FoundersSection } from "@/components/sections/FoundersSection";
+import { GrowSection } from "@/components/sections/GrowSection";
+import { OutcomesSection } from "@/components/sections/OutcomesSection";
+import { WhyUsSection } from "@/components/sections/WhyUsSection";
+import { CasesSection } from "@/components/sections/CasesSection";
 import { useContent } from "@/contexts/ContentContext";
 import { useEffect } from "react";
 
@@ -59,12 +63,16 @@ const Index = () => {
     <main className="overflow-hidden">
       <HeroSection />
       <ClientsSection />
-      <AuthoritySection />
+      <GrowSection />
       <PainSection />
+      <OutcomesSection />
       <SolutionSection />
       <HowItWorksSection />
-      <BenefitsSection />
+      <WhyUsSection />
+      <CasesSection />
+      <AuthoritySection />
       <FoundersSection />
+      <BenefitsSection />
       <TestimonialsSection />
       <ObjectionsSection />
       <CtaSection />

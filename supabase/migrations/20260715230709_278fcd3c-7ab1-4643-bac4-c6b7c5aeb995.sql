@@ -1,0 +1,1 @@
+UPDATE public.site_content SET content = '{}'::jsonb WHERE id = 'main';
