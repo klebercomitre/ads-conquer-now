@@ -1,0 +1,1 @@
+UPDATE public.site_content SET content = content || jsonb_build_object('heroHeadline','Já anuncia e não vende? Ou ainda não anuncia e perde clientes todos os dias?','whatsappNumber','5544999924439','gtmId','GTM-T97SQTTR'), updated_at = now() WHERE id = 'main';
