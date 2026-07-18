@@ -127,7 +127,7 @@ export const AaLanding = () => {
             <div>
               <span className="aa-badge aa-rv">
                 <span className="aa-dot" aria-hidden="true" />
-                Agenda de análises gratuitas aberta · Umuurama e região
+                Agenda de análises gratuitas aberta · Umuarama e região
               </span>
               <h1 className="aa-rv" style={{ ["--i" as any]: 1 }}>
                 Sua empresa vendendo mais <span className="accent">todos os dias</span>
