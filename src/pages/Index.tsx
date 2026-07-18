@@ -1,21 +1,4 @@
-import { HeroSection } from "@/components/sections/HeroSection";
-import { AuthoritySection } from "@/components/sections/AuthoritySection";
-import { PainSection } from "@/components/sections/PainSection";
-import { SolutionSection } from "@/components/sections/SolutionSection";
-import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
-import { BenefitsSection } from "@/components/sections/BenefitsSection";
-import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
-import { ObjectionsSection } from "@/components/sections/ObjectionsSection";
-import { CtaSection } from "@/components/sections/CtaSection";
-import { FaqSection } from "@/components/sections/FaqSection";
-import { FooterSection } from "@/components/sections/FooterSection";
-import { FloatingWhatsApp } from "@/components/WhatsAppButton";
-import { ClientsSection } from "@/components/sections/ClientsSection";
-import { FoundersSection } from "@/components/sections/FoundersSection";
-import { GrowSection } from "@/components/sections/GrowSection";
-import { OutcomesSection } from "@/components/sections/OutcomesSection";
-import { WhyUsSection } from "@/components/sections/WhyUsSection";
-import { CasesSection } from "@/components/sections/CasesSection";
+import { AaLanding } from "@/components/AaLanding";
 import { useContent } from "@/contexts/ContentContext";
 import { useEffect } from "react";
 
@@ -59,29 +42,7 @@ const Index = () => {
     }
   }, [content.metaPixelId]);
 
-  return (
-    <main className="overflow-hidden">
-      <HeroSection />
-      <ClientsSection />
-      <GrowSection />
-      <PainSection />
-      <OutcomesSection />
-      <SolutionSection />
-      <HowItWorksSection />
-      <WhyUsSection />
-      <CasesSection />
-      <AuthoritySection />
-      <FoundersSection />
-      <BenefitsSection />
-      <TestimonialsSection />
-      <ObjectionsSection />
-      <CtaSection />
-      <FaqSection />
-      <FooterSection />
-      <FloatingWhatsApp />
-
-    </main>
-  );
+  return <AaLanding />;
 };
 
 export default Index;
