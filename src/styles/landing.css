@@ -78,7 +78,7 @@ h2.aa-display{font-size:clamp(1.8rem,4.6vw,3.2rem);margin-bottom:20px}
 @media(min-width:768px){.aa-nav{height:80px}}
 .aa-nav .aa-logo{height:32px;width:auto}
 @media(min-width:768px){.aa-nav .aa-logo{height:36px}}
-.aa-nav .aa-btn{min-height:42px;padding:0 22px;font-size:.88rem;box-shadow:none}
+.aa-nav .aa-btn{min-height:42px;padding:0 22px;font-size:.88rem;box-shadow:none;white-space:nowrap}
 
 /* Hero */
 .aa-hero{position:relative;padding:72px 0 88px;overflow:hidden}
@@ -256,6 +256,9 @@ h2.aa-display{font-size:clamp(1.8rem,4.6vw,3.2rem);margin-bottom:20px}
   .aa-stage{max-width:100%}
   .aa-stage-card figcaption{padding:15px 18px;font-size:.86rem}
   .aa-btn{width:100%;padding:0 24px}
+  .aa-nav{gap:12px}
+  .aa-nav .aa-logo{height:42px}
+  .aa-nav .aa-btn{width:auto;min-height:38px;padding:0 14px;font-size:.78rem;flex:none}
   .aa-pains-close .aa-btn,.aa-offer-inner .aa-btn,.aa-final .aa-btn{max-width:none}
   .aa-pain{padding:18px 2px;gap:14px}
   .aa-pain p{font-size:.95rem}
