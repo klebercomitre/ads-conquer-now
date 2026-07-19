@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useContent } from "@/contexts/ContentContext";
 import aceLeraLogo from "@/assets/acelera-logo.svg";
 import founders from "@/assets/founders.jpg";
+import founderHero from "@/assets/founder-hero.jpg";
 import solutionCell from "@/assets/clients/solution-cell.png";
 import arenaCastelo from "@/assets/clients/arena-castelo.jpg";
 import smartAssistencia from "@/assets/clients/smart-assistencia.jpg";
@@ -15,6 +16,7 @@ import seuJorge from "@/assets/clients/seu-jorge-boteco.png";
 import smartMsSolar from "@/assets/clients/smart-ms-solar.jpg";
 import ellerSemijoias from "@/assets/clients/eller-semijoias.jpg";
 import connectIphone from "@/assets/clients/connect-iphone.jpg";
+import otioEnsina from "@/assets/clients/otio-ensina.png";
 import "@/styles/landing.css";
 
 const WA_ICON = (
@@ -35,7 +37,7 @@ const CLIENT_LOGOS = [
   { name: "Arena Castelo", img: arenaCastelo },
   { name: "Smart Assistência", img: smartAssistencia },
   { name: "iShop Toledo", img: ishopToledo },
-  { name: "Nerd", img: nerdLogo },
+  { name: "H.Tech", img: nerdLogo },
   { name: "5G Parts", img: fivegParts },
   { name: "Favoritta Store", img: favoritta },
   { name: "Seu Jorge Boteco", img: seuJorge },
@@ -43,6 +45,7 @@ const CLIENT_LOGOS = [
   { name: "Smart MS Solar", img: smartMsSolar },
   { name: "Eller Semijóias", img: ellerSemijoias },
   { name: "Connect iPhone", img: connectIphone },
+  { name: "OtioEnsina", img: otioEnsina },
 ];
 
 export const AaLanding = () => {
@@ -87,7 +90,7 @@ export const AaLanding = () => {
       style={extra}
     >
       {WA_ICON}
-      Quero uma Análise Gratuita
+      Quero Vender Mais
     </a>
   );
 
@@ -115,7 +118,7 @@ export const AaLanding = () => {
             data-cta="header"
             onClick={() => track("header")}
           >
-            Análise Gratuita
+            Falar com Especialista
           </a>
         </div>
       </header>
@@ -154,14 +157,14 @@ export const AaLanding = () => {
             <div className="aa-stage aa-rv" style={{ ["--i" as any]: 2 }}>
               <figure className="aa-stage-card">
                 <img
-                  src={founders}
-                  alt="Kleber Comitre e Romário Carvalho, fundadores da Acelera Ads"
+                  src={founderHero}
+                  alt="Kleber Comitre, fundador da Acelera Ads"
                   width={470}
                   height={352}
                   {...({ fetchpriority: "high" } as any)}
                 />
                 <figcaption>
-                  <b>Kleber Comitre e Romário Carvalho</b>, fundadores. Você fala direto com quem opera a sua conta.
+                  <b>Kleber Comitre</b>, sócio-fundador. Você fala direto com quem opera a sua conta.
                 </figcaption>
               </figure>
             </div>
@@ -358,7 +361,7 @@ export const AaLanding = () => {
               ))}
             </div>
             <p className="aa-clients-line aa-rv">
-              E também: <b>Solution Cell · Arena Castelo · Nerd · 5G Parts · Favoritta Store · Seu Jorge Boteco · FretesJá · Eller Semijóias · Connect iPhone</b>. Mais de 30 empresas atendidas em Umuarama e região.
+              E também: <b>Solution Cell · Arena Castelo · H.Tech · 5G Parts · Favoritta Store · Seu Jorge Boteco · FretesJá · Eller Semijóias · Connect iPhone · OtioEnsina</b>. Mais de 30 empresas atendidas em Umuarama e região.
             </p>
           </div>
         </section>
