@@ -158,13 +158,13 @@ export const AaLanding = () => {
               <figure className="aa-stage-card">
                 <img
                   src={founderHero}
-                  alt="Kleber Comitre, fundador da Acelera Ads"
+                  alt="Kleber Comitre e Romário Carvalho, fundadores da Acelera Ads"
                   width={470}
                   height={352}
                   {...({ fetchpriority: "high" } as any)}
                 />
                 <figcaption>
-                  <b>Kleber Comitre</b>, sócio-fundador. Você fala direto com quem opera a sua conta.
+                  <b>Kleber Comitre e Romário Carvalho</b>, fundadores. Você fala direto com quem opera a sua conta.
                 </figcaption>
               </figure>
             </div>
